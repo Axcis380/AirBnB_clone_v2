@@ -1,6 +1,5 @@
-# Configures a web server for deployment of web_static.
-
-# Nginx configuration file
+# Config a web server for deploy of web_static.
+# Nginx config file
 $nginx_conf = "server {
     listen 80 default_server;
     listen [::]:80 default_server;
