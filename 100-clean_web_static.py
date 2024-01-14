@@ -28,6 +28,8 @@ def do_clean(number=0):
 
     with cd("/data/web_static/releases"):
         remote_archives = run("ls -tr | grep 'web_static_'", quiet=True).split()
-        remote_archives_to_delete = remote_archives[:-number]
-        sudo("rm -rf {}".format(" ".join(remote_archives_to_delete)), quiet=True)
+        # Ensure we don't delete all archives if number exceeds available archives
+        if number < len(remote_archives):
+            remote_archives_to_delete = remote_archives[:-number]
+            sudo("rm -rf {}".format(" ".join(remote_archives_to_delete)), quiet=True)
 
