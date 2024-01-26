@@ -6,7 +6,7 @@ arc to the web ser
 
 from fabric.api import put, run, env
 from os.path import exists
-env.hosts = ['107.23.204.213', '34.203.33.158']
+env.hosts = ['100.26.214.58', '3.85.196.126']
 
 
 def do_deploy(archive_path):
